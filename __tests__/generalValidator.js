@@ -30,6 +30,7 @@ describe("generalValidator 테스트", () => {
     { input: "car" },
     { input: "000" },
     { input: "A가1" },
+    { input: "철수,영희" },
   ])("'$input' 입력은 에러가 발생하지 않는다.", ({ input }) => {
     expect(() => generalValidator.checkInput(input)).not.toThrow(CustomError);
   });
