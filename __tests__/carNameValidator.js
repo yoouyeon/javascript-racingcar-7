@@ -1,4 +1,4 @@
-import carNameValidator from "../src/validator/carNameValidator";
+import carNameValidator from "../src/validator/carNameValidator.js";
 import CustomError from "../src/CustomError.js";
 
 describe("carNameValidator 테스트", () => {
