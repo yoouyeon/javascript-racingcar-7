@@ -23,12 +23,17 @@ class Car {
     this.#distance = 0;
   }
 
+  // TODO : 필요 없는 메서드인지 확인 필요
   /**
    * 현재 자동차의 정보 객체를 반환하는 getter
    * @returns {object} { name: string, distance: number }
    */
   get currentInfomation() {
     return { name: this.#name, distance: this.#distance };
+  }
+
+  get name() {
+    return this.#name;
   }
 
   /**
