@@ -1,5 +1,9 @@
 import Car from "./Car";
-import { carNameValidator, generalValidator } from "./validator";
+import {
+  carNameValidator,
+  generalValidator,
+  moveCountValidator,
+} from "./validator";
 import { Input } from "./view";
 
 class RaceController {
@@ -47,8 +51,8 @@ class RaceController {
    */
   #setMoveCount(moveCount) {
     generalValidator.checkInput(moveCount);
-    // TODO : 이동 횟수 유효성 검사
-    this.#moveCount = Number(moveCount);
+    moveCountValidator.checkCount(moveCount);
+    this.#moveCount = Number.parseInt(moveCount, 10);
   }
 }
 
