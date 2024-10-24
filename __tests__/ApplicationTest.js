@@ -1,5 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import App from "../src/App.js";
+import getLogSpy from "./getLogSpy.js";
 
 const mockQuestions = (inputs) => {
   MissionUtils.Console.readLineAsync = jest.fn();
@@ -17,12 +18,6 @@ const mockRandoms = (numbers) => {
     (acc, number) => acc.mockReturnValueOnce(number),
     MissionUtils.Random.pickNumberInRange
   );
-};
-
-const getLogSpy = () => {
-  const logSpy = jest.spyOn(MissionUtils.Console, "print");
-  logSpy.mockClear();
-  return logSpy;
 };
 
 describe("자동차 경주", () => {
