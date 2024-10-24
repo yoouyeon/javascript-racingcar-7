@@ -1,4 +1,4 @@
-import getLogSpy from "./getLogSpy";
+import getLogSpy from "../src/getLogSpy.js";
 import Output from "../src/view/Output";
 
 describe("Output", () => {
