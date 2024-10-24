@@ -1,5 +1,5 @@
 import Car from "./Car";
-import { generalValidator } from "./validator";
+import { carNameValidator, generalValidator } from "./validator";
 import { Input } from "./view";
 
 class RaceController {
@@ -35,7 +35,7 @@ class RaceController {
   #createCarCollection(carNames) {
     generalValidator.checkInput(carNames);
     const carNameList = carNames.split(RaceController.#CAR_NAME_SEPARATOR);
-    // TODO : 차 이름 유효성 검사
+    carNameValidator.checkList(carNameList);
     carNameList.forEach((carName) => {
       this.#carCollection.set(carName, new Car(carName));
     });
