@@ -5,7 +5,7 @@ describe("Output", () => {
   test.each([
     {
       input: [[{ name: "A", distance: 0 }]],
-      expected: [["실행 결과\n"], ["A : \n"], ["\n"]],
+      expected: [["실행 결과"], ["A : "], [""]],
     },
     {
       input: [
@@ -14,7 +14,7 @@ describe("Output", () => {
           { name: "B", distance: 1 },
         ],
       ],
-      expected: [["실행 결과\n"], ["A : \n"], ["B : -\n"], ["\n"]],
+      expected: [["실행 결과"], ["A : "], ["B : -"], [""]],
     },
     {
       input: [
@@ -28,13 +28,13 @@ describe("Output", () => {
         ],
       ],
       expected: [
-        ["실행 결과\n"],
-        ["A : \n"],
-        ["B : -\n"],
-        ["\n"],
-        ["A : -\n"],
-        ["B : --\n"],
-        ["\n"],
+        ["실행 결과"],
+        ["A : "],
+        ["B : -"],
+        [""],
+        ["A : -"],
+        ["B : --"],
+        [""],
       ],
     },
   ])("차수별 결과 출력 테스트", ({ input, expected }) => {
@@ -46,14 +46,14 @@ describe("Output", () => {
   test.each([
     {
       input: [{ name: "A", distance: 1 }],
-      expected: [["최종 우승자 : "], ["A\n"]],
+      expected: [["최종 우승자 : A"]],
     },
     {
       input: [
         { name: "A", distance: 1 },
         { name: "B", distance: 2 },
       ],
-      expected: [["최종 우승자 : "], ["A, B\n"]],
+      expected: [["최종 우승자 : A, B"]],
     },
   ])("최종 우승자 출력 테스트", ({ input, expected }) => {
     const logSpy = getLogSpy();

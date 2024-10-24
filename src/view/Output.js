@@ -1,7 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 
 class Output {
-  static #RESULT_MESSAGE = "실행 결과\n";
+  static #RESULT_MESSAGE = "실행 결과";
 
   static #PROGRESS_BAR = "-";
 
@@ -29,12 +29,12 @@ class Output {
 
   static #printRound(roundHistory) {
     roundHistory.forEach((car) => Output.#printPosition(car));
-    Output.#print("\n");
+    Output.#print("");
   }
 
   static #printPosition(car) {
     const { name, distance } = car;
-    Output.#print(`${name} : ${Output.#PROGRESS_BAR.repeat(distance)}\n`);
+    Output.#print(`${name} : ${Output.#PROGRESS_BAR.repeat(distance)}`);
   }
 
   /**
@@ -42,8 +42,9 @@ class Output {
    * @param {Array<Array<{name: string, distance: string}>>} winners
    */
   static printWinners(winners) {
-    Output.#print(Output.#WINNER_MESSAGE);
-    Output.#print(`${winners.map((winner) => winner.name).join(", ")}\n`);
+    Output.#print(
+      `${Output.#WINNER_MESSAGE}${winners.map((winner) => winner.name).join(", ")}`
+    );
   }
 }
 
