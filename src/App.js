@@ -1,6 +1,15 @@
+import RaceController from "./RaceController.js";
+
 class App {
-  // eslint-disable-next-line
-  async run() {}
+  #raceController;
+
+  constructor() {
+    this.#raceController = new RaceController();
+  }
+
+  async run() {
+    await this.#raceController.run();
+  }
 }
 
 export default App;

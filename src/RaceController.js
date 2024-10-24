@@ -1,10 +1,10 @@
-import Car from "./Car";
-import {
-  carNameValidator,
-  generalValidator,
-  moveCountValidator,
-} from "./validator";
-import { Input } from "./view";
+import Car from "./Car.js";
+import generalValidator from "./validator/generalValidator.js";
+import carNameValidator from "./validator/carNameValidator.js";
+import moveCountValidator from "./validator/moveCountValidator.js";
+import Input from "./view/Input.js";
+import Output from "./view/Output.js";
+import RaceEngine from "./RaceEngine.js";
 
 class RaceController {
   static #CAR_NAME_SEPARATOR = ",";
@@ -13,9 +13,12 @@ class RaceController {
 
   #moveCount;
 
+  #raceEngine;
+
   constructor() {
-    this.#carCollection = new Map();
+    this.#carCollection = [];
     this.#moveCount = 0;
+    this.#raceEngine = new RaceEngine();
   }
 
   /**
@@ -29,7 +32,12 @@ class RaceController {
     const moveCount = await Input.readMoveCount();
     this.#setMoveCount(moveCount);
     // TODO : race engine을 돌려 history와 winner를 반환
-    // TODO : history와 winner를 출력
+    const { history, winners } = this.#raceEngine.start(
+      this.#moveCount,
+      this.#carCollection
+    );
+    Output.printAllRounds(history);
+    Output.printWinners(winners);
   }
 
   /**
@@ -41,7 +49,7 @@ class RaceController {
     const carNameList = carNames.split(RaceController.#CAR_NAME_SEPARATOR);
     carNameValidator.checkList(carNameList);
     carNameList.forEach((carName) => {
-      this.#carCollection.set(carName, new Car(carName));
+      this.#carCollection.push(new Car(carName));
     });
   }
 
