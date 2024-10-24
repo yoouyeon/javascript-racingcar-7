@@ -1,4 +1,4 @@
-import checkRuleSet from "./checkRuleSet";
+import checkRuleSet from "./checkRuleSet.js";
 
 const moveCountValidator = {
   RULE_SET: {
