@@ -4,14 +4,14 @@ import Output from "../src/view/Output";
 describe("Output", () => {
   test.each([
     {
-      input: [[{ name: "A", distance: 0 }]],
+      input: [[{ name: "A", position: 0 }]],
       expected: [["실행 결과"], ["A : "], [""]],
     },
     {
       input: [
         [
-          { name: "A", distance: 0 },
-          { name: "B", distance: 1 },
+          { name: "A", position: 0 },
+          { name: "B", position: 1 },
         ],
       ],
       expected: [["실행 결과"], ["A : "], ["B : -"], [""]],
@@ -19,12 +19,12 @@ describe("Output", () => {
     {
       input: [
         [
-          { name: "A", distance: 0 },
-          { name: "B", distance: 1 },
+          { name: "A", position: 0 },
+          { name: "B", position: 1 },
         ],
         [
-          { name: "A", distance: 1 },
-          { name: "B", distance: 2 },
+          { name: "A", position: 1 },
+          { name: "B", position: 2 },
         ],
       ],
       expected: [
@@ -45,13 +45,13 @@ describe("Output", () => {
 
   test.each([
     {
-      input: [{ name: "A", distance: 1 }],
+      input: [{ name: "A", position: 1 }],
       expected: [["최종 우승자 : A"]],
     },
     {
       input: [
-        { name: "A", distance: 1 },
-        { name: "B", distance: 2 },
+        { name: "A", position: 1 },
+        { name: "B", position: 2 },
       ],
       expected: [["최종 우승자 : A, B"]],
     },

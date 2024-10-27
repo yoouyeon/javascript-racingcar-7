@@ -33,13 +33,13 @@ class Output {
   }
 
   static #printPosition(car) {
-    const { name, distance } = car;
-    Output.#print(`${name} : ${Output.#PROGRESS_BAR.repeat(distance)}`);
+    const { name, position } = car;
+    Output.#print(`${name} : ${Output.#PROGRESS_BAR.repeat(position)}`);
   }
 
   /**
    * 최종 우승자를 출력하는 메소드
-   * @param {Array<Array<{name: string, distance: string}>>} winners
+   * @param {Array<Array<{name: string, position: string}>>} winners
    */
   static printWinners(winners) {
     Output.#print(
