@@ -20,9 +20,13 @@ describe("Car 테스트", () => {
     }
   );
 
-  test("이름이 'pobi'인 자동차를 생성하는 경우, {name: 'pobi', distance: 0} 인 자동차가 생성된다.", () => {
+  test("이름이 'pobi'인 자동차를 생성하는 경우, {name: 'pobi', position: 0, positionHistory: [] } 인 자동차가 생성된다.", () => {
     const car = new Car("pobi");
-    expect(car.currentInfomation).toEqual({ name: "pobi", distance: 0 });
+    expect(car.info).toEqual({
+      name: "pobi",
+      position: 0,
+      positionHistory: [],
+    });
   });
 
   // Random.pickNumberInRange()를 모킹하여 number를 반환하도록 설정
@@ -45,9 +49,10 @@ describe("Car 테스트", () => {
       const car = new Car("pobi");
       mockPickNumberInRange(input);
       car.move();
-      expect(car.currentInfomation).toEqual({
+      expect(car.info).toEqual({
         name: "pobi",
-        distance: expected,
+        position: expected,
+        positionHistory: [expected],
       });
     }
   );
