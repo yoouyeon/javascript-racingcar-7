@@ -15,7 +15,7 @@ class Car {
   });
 
   /**
-   * Car 인스턴스를 생성하고, 초기화하는 생성자
+   * @constructor
    * @param {string} name - 자동차의 이름
    * @throws {CustomError} 이름이 유효하지 않은 경우 발생
    */
