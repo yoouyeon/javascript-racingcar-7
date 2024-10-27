@@ -1,5 +1,5 @@
 import { Random } from "@woowacourse/mission-utils";
-import carNameValidator from "./validator/carNameValidator.js";
+import carNameValidator from "../validator/carNameValidator.js";
 
 class Car {
   #name;

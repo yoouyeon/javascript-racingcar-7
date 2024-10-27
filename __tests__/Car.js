@@ -1,5 +1,5 @@
 import { Random } from "@woowacourse/mission-utils";
-import Car from "../src/Car.js";
+import Car from "../src/model/Car.js";
 import carNameValidator from "../src/validator/carNameValidator.js";
 import CustomError from "../src/CustomError.js";
 
