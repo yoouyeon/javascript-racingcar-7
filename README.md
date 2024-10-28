@@ -51,3 +51,31 @@
 - [x] indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다. 2까지만 허용한다.
 - [x] 3항 연산자를 쓰지 않는다.
 - [x] Jest를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
+
+## 🌠 flow chart
+
+```mermaid
+graph LR
+  START(["시작"]) --> INPUT_CAR_NAME[/"`안내 메시지 출력<br/>자동차 이름 입력`"/]
+  INPUT_CAR_NAME --> PARSE_CAR_NAME["이름 구분하기"]
+  PARSE_CAR_NAME --> IS_VALID_NAME{"자동차 이름이 유효한가?"}
+
+  IS_VALID_NAME -- Yes --> INPUT_TRY_COUNT[/"`안내 메시지 출력<br/>시도 횟수 입력`"/]
+  IS_VALID_NAME -- No --> THROW_ERROR["에러 발생"]
+
+  INPUT_TRY_COUNT --> IS_VALID_COUNT{"시도 횟수가 유효한가?"}
+  IS_VALID_COUNT -- Yes --> IS_COMPLETED{"시도 횟수만큼 이동했는가?"}
+  IS_VALID_COUNT -- No --> THROW_ERROR
+
+  IS_COMPLETED -- No --> MOVE_CAR["자동차 이동"]
+
+  subgraph Race
+    MOVE_CAR --> SAVE_RESULT["이동 결과 저장"] --> IS_COMPLETED
+  end
+
+  IS_COMPLETED -- Yes --> CHECK_WINNER["우승자 판별"]
+  CHECK_WINNER --> PRINT_RESULT[/"`차수별 실행 결과 출력<br/>최종 우승자 출력`"/]
+  PRINT_RESULT --> SUCCESSFUL_TERMINATION(["정상 종료"])
+
+  THROW_ERROR --> UNSUCCESSFUL_TERMINATION(["비정상 종료"])
+```
