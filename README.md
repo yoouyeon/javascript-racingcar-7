@@ -79,3 +79,34 @@ graph LR
 
   THROW_ERROR --> UNSUCCESSFUL_TERMINATION(["비정상 종료"])
 ```
+
+## 📁 디렉토리 구조
+
+```
+.
+├── __tests__
+└── src
+    ├── App.js
+    ├── RaceController.js             // 메인 경주 컨트롤러
+    ├── index.js
+    ├── model
+    │   ├── Car.js                    // 개별 자동차 데이터 관리
+    │   └── Race.js                   // 경주 데이터 관리
+    ├── utils                         // 유틸리티 모듈
+    │   ├── CustomError.js
+    │   └── test                      // 테스트용 유틸리티
+    ├── validator                     // 입력값 검증용 모듈들
+    │   ├── carNameValidator.js       // 자동차 이름 검증
+    │   ├── checkRuleSet.js           // 규칙 세트 검증 유틸리티 함수
+    │   ├── generalValidator.js       // 입력 일반 검증
+    │   └── moveCountValidator.js     // 이동 횟수 입력 검증
+    └── view                          // 입출력 처리
+        ├── Input.js
+        ├── Output.js
+        └── index.js
+```
+
+## ✅ 테스트 결과
+
+<img alt="test-screenshot" src="https://github.com/user-attachments/assets/eee0e3b7-8f31-4fec-b2e7-efd182103952" width="50%" />
+
