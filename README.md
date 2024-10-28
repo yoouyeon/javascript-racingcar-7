@@ -109,4 +109,3 @@ graph LR
 ## ✅ 테스트 결과
 
 <img alt="test-screenshot" src="https://github.com/user-attachments/assets/eee0e3b7-8f31-4fec-b2e7-efd182103952" width="50%" />
-
