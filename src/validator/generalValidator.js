@@ -1,16 +1,16 @@
 import checkRuleSet from "./checkRuleSet.js";
 
 const generalValidator = {
-  RULE_SET: {
-    empty: {
+  RULE_SET: Object.freeze({
+    empty: Object.freeze({
       isValid: (input) => input.length !== 0,
       errorMessage: "입력된 내용이 없습니다.",
-    },
-    invalidCharacter: {
+    }),
+    invalidCharacter: Object.freeze({
       isValid: (input) => /^[a-zA-Z0-9가-힣,]*$/.test(input),
       errorMessage: "한글, 영문, 숫자만 입력 가능합니다.",
-    },
-  },
+    }),
+  }),
 
   /**
    * @public
