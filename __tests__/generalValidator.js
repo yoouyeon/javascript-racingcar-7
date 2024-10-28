@@ -1,5 +1,5 @@
-import CustomError from "../src/CustomError";
-import generalValidator from "../src/validator/generalValidator";
+import CustomError from "../src/utils/CustomError.js";
+import generalValidator from "../src/validator/generalValidator.js";
 
 describe("generalValidator 테스트", () => {
   test.each([

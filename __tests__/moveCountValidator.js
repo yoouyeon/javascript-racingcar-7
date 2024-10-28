@@ -1,5 +1,5 @@
-import CustomError from "../src/CustomError";
-import moveCountValidator from "../src/validator/moveCountValidator";
+import CustomError from "../src/utils/CustomError.js";
+import moveCountValidator from "../src/validator/moveCountValidator.js";
 
 describe("moveCountValidator 테스트", () => {
   test.each([
