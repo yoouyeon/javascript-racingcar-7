@@ -1,5 +1,5 @@
 import carNameValidator from "../src/validator/carNameValidator.js";
-import CustomError from "../src/CustomError.js";
+import CustomError from "../src/utils/CustomError.js";
 
 describe("carNameValidator 테스트", () => {
   test.each([

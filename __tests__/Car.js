@@ -1,7 +1,7 @@
 import { Random } from "@woowacourse/mission-utils";
 import Car from "../src/model/Car.js";
 import carNameValidator from "../src/validator/carNameValidator.js";
-import CustomError from "../src/CustomError.js";
+import CustomError from "../src/utils/CustomError.js";
 
 describe("Car 테스트", () => {
   test.each([
