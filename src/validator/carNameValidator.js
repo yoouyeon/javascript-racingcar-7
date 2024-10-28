@@ -26,10 +26,26 @@ const carNameValidator = {
     }),
   }),
 
+  /**
+   * @public
+   * @param {string} name
+   * @returns {void}
+   * @throws {CustomError}
+   * @description
+   * 자동차 이름의 길이가 유효한지 검사한다.
+   */
   checkLength: (name) => {
     checkRuleSet(name, carNameValidator.NAME_RULE_SET);
   },
 
+  /**
+   * @public
+   * @param {Array} list
+   * @returns {void}
+   * @throws {CustomError}
+   * @description
+   * 자동차 이름 목록이 유효한지 검사한다.
+   */
   checkList: (list) => {
     checkRuleSet(list, carNameValidator.LIST_RULE_SET);
   },

@@ -16,6 +16,14 @@ const moveCountValidator = {
     },
   },
 
+  /**
+   * @public
+   * @param {string} input
+   * @returns {void}
+   * @throws {CustomError}
+   * @description
+   * 이동 시도 횟수가 유효한지 검사한다.
+   */
   checkCount: (input) => {
     checkRuleSet(input, moveCountValidator.RULE_SET);
   },

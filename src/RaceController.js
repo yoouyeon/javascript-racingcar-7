@@ -54,7 +54,7 @@ class RaceController {
 
   /**
    * @private
-   * @param {string} moveCount - 이동 횟수
+   * @param {string} tryCount - 이동 횟수
    * @returns {number} - 이동 횟수
    */
   static #getTryCount(tryCount) {

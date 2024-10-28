@@ -12,6 +12,14 @@ const generalValidator = {
     },
   },
 
+  /**
+   * @public
+   * @param {string} input
+   * @returns {void}
+   * @throws {CustomError}
+   * @description
+   * 입력값이 유효한지 검사한다.
+   */
   checkInput: (input) => {
     checkRuleSet(input, generalValidator.RULE_SET);
   },
