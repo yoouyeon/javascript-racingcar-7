@@ -1,5 +1,5 @@
 import getLogSpy from "../src/utils/test/getLogSpy.js";
-import Output from "../src/view/Output";
+import Output from "../src/view/Output.js";
 
 describe("Output", () => {
   test.each([
