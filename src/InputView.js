@@ -5,12 +5,14 @@ const InputView = {
   TRY_COUNT_INPUT_MESSAGE: '시도할 횟수는 몇회인가요?\n',
 
   readCarNames: async () => {
-    const input = await Console.readlineAsync(InputView.CAR_NAME_INPUT_MESSAGE);
+    const input = await Console.readLineAsync(InputView.CAR_NAME_INPUT_MESSAGE);
     return input;
   },
 
   readTryCount: async () => {
-    const input = await Console.readlineAsync(InputView.TRY_COUNT_INPUT_MESSAGE);
+    const input = await Console.readLineAsync(InputView.TRY_COUNT_INPUT_MESSAGE);
     return input;
   },
 };
+
+export default InputView;
