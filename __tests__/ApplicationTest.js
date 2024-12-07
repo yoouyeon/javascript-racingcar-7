@@ -1,29 +1,7 @@
-import { MissionUtils } from '@woowacourse/mission-utils';
 import App from '../src/App.js';
-
-const mockQuestions = (inputs) => {
-  MissionUtils.Console.readLineAsync = jest.fn();
-
-  MissionUtils.Console.readLineAsync.mockImplementation(() => {
-    const input = inputs.shift();
-    return Promise.resolve(input);
-  });
-};
-
-const mockRandoms = (numbers) => {
-  MissionUtils.Random.pickNumberInRange = jest.fn();
-
-  numbers.reduce(
-    (acc, number) => acc.mockReturnValueOnce(number),
-    MissionUtils.Random.pickNumberInRange
-  );
-};
-
-const getLogSpy = () => {
-  const logSpy = jest.spyOn(MissionUtils.Console, 'print');
-  logSpy.mockClear();
-  return logSpy;
-};
+import getLogSpy from '../src/getLogSpy.js';
+import mockQuestions from '../src/mockQuestions.js';
+import mockRandoms from '../src/mockRandoms.js';
 
 describe('자동차 경주', () => {
   test('기능 테스트', async () => {
