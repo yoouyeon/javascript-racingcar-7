@@ -2,6 +2,7 @@
 import Car from './Car.js';
 import CustomError from './CustomError.js';
 import InputView from './InputView.js';
+import OutputView from './OutputView.js';
 
 /** @typedef {import('./Car.js').default} CarType */
 
@@ -16,7 +17,7 @@ class App {
   async run() {
     await this.initializeCars();
     await this.initializeTryCount();
-    // 자동차 경주 시작
+    this.startGame();
   }
 
   /**
@@ -58,6 +59,41 @@ class App {
     if (tryCountNumber < 1) {
       throw new CustomError('시도 횟수는 1 이상이어야 합니다.');
     }
+  }
+
+  /**
+   * @description 게임 시작
+   */
+  startGame() {
+    OutputView.printResultHeader();
+    for (let count = 0; count < this.#tryCount; count += 1) {
+      // this.moveCars();
+      // this.printResult();
+    }
+    // this.printWinners();
+  }
+
+  // moveCars() {
+  //   this.#cars.forEach((car) => car.move());
+  // }
+
+  // printResult() {
+  //   this.#cars.forEach((car) => OutputView.printCarState(car));
+  //   OutputView.printNewLine();
+  // }
+
+  // printWinners() {
+  //   const winners = this.getWinners();
+  //   OutputView.printWinners(winners);
+  // }
+
+  /**
+   * @param {CarType[]} cars - 자동차 목록
+   * @returns {CarType[]} 우승자 목록
+   */
+  static getWinners(cars) {
+    const maxPosition = Math.max(...cars.map((car) => car.position));
+    return cars.filter((car) => car.position === maxPosition);
   }
 }
 
