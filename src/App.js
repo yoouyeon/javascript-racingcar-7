@@ -67,25 +67,25 @@ class App {
   startGame() {
     OutputView.printResultHeader();
     for (let count = 0; count < this.#tryCount; count += 1) {
-      // this.moveCars();
-      // this.printResult();
+      this.moveCars();
+      this.printResult();
     }
-    // this.printWinners();
+    this.printWinners();
   }
 
-  // moveCars() {
-  //   this.#cars.forEach((car) => car.move());
-  // }
+  moveCars() {
+    this.#cars.forEach((car) => car.move());
+  }
 
-  // printResult() {
-  //   this.#cars.forEach((car) => OutputView.printCarState(car));
-  //   OutputView.printNewLine();
-  // }
+  printResult() {
+    this.#cars.forEach((car) => OutputView.printCarState(car));
+    OutputView.printNewLine();
+  }
 
-  // printWinners() {
-  //   const winners = this.getWinners();
-  //   OutputView.printWinners(winners);
-  // }
+  printWinners() {
+    const winners = App.getWinners(this.#cars);
+    OutputView.printWinners(winners);
+  }
 
   /**
    * @param {CarType[]} cars - 자동차 목록

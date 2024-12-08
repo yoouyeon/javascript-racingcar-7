@@ -1,5 +1,7 @@
 import App from './App.js';
 import Car from './Car.js';
+import getLogSpy from './getLogSpy.js';
+import mockQuestions from './mockQuestions.js';
 import mockRandoms from './mockRandoms.js';
 
 describe('자동차 경주 테스트', () => {
@@ -77,6 +79,39 @@ describe('자동차 경주 테스트', () => {
 
       // then
       expect(winners).toEqual([car1, car2]);
+    });
+  });
+
+  describe('자동차 경주 테스트', () => {
+    test('통합 테스트', async () => {
+      // given
+      const GO = 4;
+      const STOP = 3;
+      const logs = [
+        'pobi : -',
+        'woni : ',
+        'jun : -',
+        'pobi : --',
+        'woni : -',
+        'jun : --',
+        'pobi : -----',
+        'woni : ----',
+        'jun : -----',
+        '최종 우승자 : pobi, jun',
+      ];
+      const logSpy = getLogSpy();
+
+      mockQuestions(['pobi,woni,jun', '5']);
+      mockRandoms([GO, STOP, GO, GO, GO, GO, GO, GO, GO, GO, GO, GO, GO, GO, GO]);
+
+      // when
+      const app = new App();
+      await app.run();
+
+      // then
+      logs.forEach((log) => {
+        expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(log));
+      });
     });
   });
 });
